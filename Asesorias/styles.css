@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #5b0c0c;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.content-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  min-height: 600px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.header-title-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 2rem;
+  color: #5b0c0c;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.header-line {
+  width: 100%;
+  height: 3px;
+  background-color: #5b0c0c;
+  margin: 0 auto;
+}
+
+/* Added action buttons section for "Mis Asesorías" link */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.btn-my-sessions {
+  background-color: #5b0c0c;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-my-sessions:hover {
+  background-color: #450909;
+  transform: translateY(-2px);
+}
+
+/* Asesorías Container */
+.asesorias-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* Card */
+.asesoria-card {
+  background-color: white;
+  border: 2px solid #5b0c0c;
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asesoria-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(91, 12, 12, 0.2);
+}
+
+.card-title {
+  color: #5b0c0c;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.card-info {
+  margin-bottom: 20px;
+}
+
+.info-item {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.info-item strong {
+  color: #5b0c0c;
+}
+
+.cupos-count {
+  font-weight: 600;
+  color: #4caf50;
+}
+
+.cupos-agotados {
+  color: #d32f2f;
+}
+
+/* Card Actions */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-inscribirse {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #5b0c0c;
+  color: white;
+}
+
+.btn-inscribirse:hover {
+  background-color: #450909;
+  transform: translateY(-2px);
+}
+
+.btn-inscribirse.btn-disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.btn-inscribirse.btn-disabled:hover {
+  transform: none;
+}
+
+/* Added enrolled button style */
+.btn-inscribirse.btn-enrolled {
+  background-color: #4caf50;
+  cursor: not-allowed;
+}
+
+.btn-inscribirse.btn-enrolled:hover {
+  transform: none;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: flex-end;
+}
+
+.nav-icon {
+  background-color: transparent;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-icon:hover {
+  transform: scale(1.1);
+}
+
+.nav-icon svg {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-card {
+    padding: 24px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 60px;
+    height: 45px;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+
+  .btn-my-sessions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .asesorias-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .btn-inscribirse {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .info-item {
+    font-size: 0.9rem;
+  }
+}
