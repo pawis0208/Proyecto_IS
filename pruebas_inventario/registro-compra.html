@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Compra de Material</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- ENCABEZADO -->
+    <header>
+      <img src="/placeholder.svg?height=80&width=80" alt="TecNM" class="logo">
+      <h1>Registro de Compra<br>Material</h1>
+      <img src="/placeholder.svg?height=80&width=80" alt="Escudo" class="logo">
+    </header>
+
+    <!-- FORMULARIO Y TABLA -->
+    <div class="fila">
+      <!-- FORMULARIO -->
+      <div class="formulario">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha">
+
+        <label for="auxiliar">Auxiliar:</label>
+        <input type="text" id="auxiliar" placeholder="Nombre del auxiliar">
+
+        <label for="material">Material:</label>
+        <select id="material">
+          <option value="">Seleccione un material</option>
+          <option value="Resistor">Resistor</option>
+          <option value="Capacitor">Capacitor</option>
+          <option value="Protoboard">Protoboard</option>
+          <option value="LED">LED</option>
+          <option value="Transistor">Transistor</option>
+          <option value="Cable">Cable</option>
+        </select>
+
+        <label for="cantidad">Cantidad:</label>
+        <div class="cantidad-container">
+          <input type="number" id="cantidad" min="1" value="1">
+          <button id="agregar" class="btn"><i class="fas fa-plus"></i> Agregar</button>
+        </div>
+      </div>
+
+      <!-- TABLA DE VISUALIZACIÓN -->
+      <div class="tabla">
+        <h3>Vista Previa de Materiales</h3>
+        <table id="tablaMateriales">
+          <thead>
+            <tr>
+              <th>Nombre del producto</th>
+              <th>Cantidad</th>
+              <th>Fecha de ingreso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Los datos se agregarán dinámicamente aquí -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- BOTONES -->
+    <footer>
+      <button class="btn" id="guardar"><i class="fas fa-save"></i> Guardar</button>
+      <button class="btn" id="eliminar"><i class="fas fa-trash"></i> Eliminar último</button>
+      <button class="btn" id="limpiar"><i class="fas fa-broom"></i> Limpiar todo</button>
+      <button class="btn" id="visualizar"><i class="fas fa-eye"></i> Visualizar</button>
+
+      <!-- ÍCONOS DE NAVEGACIÓN -->
+      <div class="iconos">
+        <a href="#" class="icono" title="Volver"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="icono" title="Inicio"><i class="fas fa-home"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- MODAL PARA VISTA PREVIA DEL REGISTRO FINALIZADO -->
+  <div id="modalVisualizacion" class="modal">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2>Vista Previa del Registro Finalizado</h2>
+        <button class="modal-cerrar" id="cerrarModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="registro-info">
+          <p><strong>Auxiliar:</strong> <span id="previewAuxiliar"></span></p>
+          <p><strong>Fecha de registro:</strong> <span id="previewFecha"></span></p>
+          <p><strong>Total de materiales:</strong> <span id="previewTotal"></span></p>
+        </div>
+        <div class="registro-tabla">
+          <table id="tablaPreview">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Material</th>
+                <th>Cantidad</th>
+                <th>Fecha de ingreso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Los datos se cargarán dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" id="confirmarRegistro"><i class="fas fa-check"></i> Confirmar Registro</button>
+        <button class="btn btn-secondary" id="cerrarModalBtn"><i class="fas fa-times"></i> Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
