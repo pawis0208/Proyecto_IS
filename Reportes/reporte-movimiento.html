@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimiento del Material por Carrera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #5c1a1a 0%, #3d0f0f 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-2xl p-8">
+        <!-- Header -->
+        <div class="flex items-center justify-between border-b-4 border-red-900 pb-4 mb-8">
+            <div class="w-32 h-20 bg-gray-200 flex items-center justify-center text-xs text-gray-600">
+                Logo TecNM
+            </div>
+            <h1 class="text-3xl font-bold text-red-900 text-center">Movimiento del material por carrera</h1>
+            <div class="w-32 h-20 bg-gray-200 flex items-center justify-center text-xs text-gray-600">
+                Logo ITS
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="mb-8 overflow-x-auto">
+            <table class="w-full border-2 border-black">
+                <thead>
+                    <tr class="bg-white">
+                        <th class="border-2 border-black px-4 py-3 text-red-900 font-bold">Material</th>
+                        <th class="border-2 border-black px-4 py-3 text-red-900 font-bold">Carrera</th>
+                        <th class="border-2 border-black px-4 py-3 text-red-900 font-bold">Cantidad</th>
+                        <th class="border-2 border-black px-4 py-3 text-red-900 font-bold">Tipo de movimiento</th>
+                        <th class="border-2 border-black px-4 py-3 text-red-900 font-bold">Fecha</th>
+                        <th class="border-2 border-black px-4 py-3 text-red-900 font-bold">Usuario</th>
+                    </tr>
+                </thead>
+                <!-- Agregado id al tbody para manipulación con JavaScript -->
+                <tbody id="tablaMovimiento">
+                    <tr>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                        <td class="border-2 border-black px-4 py-3">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Download Buttons -->
+        <!-- Agregadas funciones onclick para descargas -->
+        <div class="flex justify-center gap-6 mb-8">
+            <button onclick="descargarExcel()" class="bg-red-900 hover:bg-red-800 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                Descargar excel
+            </button>
+            <button onclick="descargarPDF()" class="bg-red-900 hover:bg-red-800 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                Descargar pdf
+            </button>
+        </div>
+
+        <!-- Navigation Icons -->
+        <div class="flex justify-end gap-4">
+            <button onclick="history.back()" class="text-red-900 hover:text-red-700 transition-colors">
+                <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+            </button>
+            <button onclick="window.location.href='index.html'" class="text-red-900 hover:text-red-700 transition-colors">
+                <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Agregado script JavaScript -->
+    <script src="js/reporte-movimiento.js"></script>
+</body>
+</html>
